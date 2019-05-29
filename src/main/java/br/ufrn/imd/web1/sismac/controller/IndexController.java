@@ -18,4 +18,11 @@ public class IndexController {
 		
 	}
 	
+	@GetMapping("login")
+	public ModelAndView login() {
+		
+		ModelAndView modelAndView = new ModelAndView("login");
+		
+		return modelAndView;
+	}
 }
