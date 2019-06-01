@@ -1,34 +1,77 @@
+<!-- tema base https://colorlib.com/preview/theme/drcare/ -->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"	
   	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Sistema de marcação de consultas</title>
 	
 	<script th:src="@{vendor/js/jquery.min.js}"></script>
+	<script th:src="@{vendor/fontawesome/js/all.min.js}"></script>
 	<script th:src="@{vendor/bootstrap/bootstrap.min.js}"></script>
+	
+	
 	<link rel="stylesheet"th:href="@{vendor/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet"th:href="@{vendor/fontawesome/css/all.min.css}">
 	
 	
 </head>
 <body>
-
-	<div> <!-- Topo -->
-	
-	</div> <!-- /Topo -->
-	
-	<div> <!-- Conteudo -->
+	<div class="container-fluid">
 		
-		<th:block layout:fragment="conteudo">
-		</th:block>
-		
-	</div> <!-- /Conteudo -->
-	
-	<div> <!-- Rodapé -->
-	
-	</div> <!-- /Rodapé -->
+		<div class="d-flex justify-content-around m-4">
+			
+			<div>
+				<i class="fas fa-map-pin text-primary"></i> Canguaretama - RN
+			</div>
+			<div>
+				<i class="fas fa-id-card-alt text-primary"></i> Sistema de marcação de consultas - Sismac
+			</div>
+			
+			<div >
+				<i class="fas fa-phone text-primary"></i> (88) 98888-8888
+			</div>
 
+		</div>
+
+		<div class="row m-2"> <!-- Topo -->
+			
+			<div class="col-8 ">
+				<ul class="nav justify-content-center">
+				  <li class="nav-item">
+				    <a class="nav-link active" href="#">Consultas/Exames</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">Pacientes</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">Relatórios</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">Recusos</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<a href="#" class="btn btn-warning">Marcar Consulta/Exame</a>
+			</div>
+		
+		</div> <!-- /Topo -->
+		
+		<div> <!-- Conteudo -->
+			
+			<th:block layout:fragment="conteudo">
+			</th:block>
+			
+		</div> <!-- /Conteudo -->
+		
+		<div> <!-- Rodapé -->
+		
+		</div> <!-- /Rodapé -->
+	</div>
 
 </body>
 </html>
