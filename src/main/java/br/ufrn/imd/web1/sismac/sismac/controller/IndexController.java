@@ -1,4 +1,4 @@
-package br.ufrn.imd.web1.sismac.controller;
+package br.ufrn.imd.web1.sismac.sismac.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class IndexController {
 
-	@GetMapping(value={"index", "home"})
+	@GetMapping
 	public ModelAndView index () {
 		
 		ModelAndView modelAndView = new ModelAndView("index");
@@ -26,3 +26,4 @@ public class IndexController {
 		return modelAndView;
 	}
 }
+

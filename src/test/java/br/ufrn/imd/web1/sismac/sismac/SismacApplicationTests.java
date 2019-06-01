@@ -1,4 +1,4 @@
-package br.ufrn.imd.web1.sismac;
+package br.ufrn.imd.web1.sismac.sismac;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
