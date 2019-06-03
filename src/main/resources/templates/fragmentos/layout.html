@@ -7,15 +7,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Sistema de marcação de consultas</title>
+	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Sistema de Marcação de Consultas</title>
 	
-	<script th:src="@{vendor/js/jquery.min.js}"></script>
-	<script th:src="@{vendor/fontawesome/js/all.min.js}"></script>
-	<script th:src="@{vendor/bootstrap/bootstrap.min.js}"></script>
+	<script th:src="@{/vendor/js/jquery.min.js}"></script>
+	<script th:src="@{/vendor/fontawesome/js/all.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/bootstrap.min.js}"></script>
 	
 	
-	<link rel="stylesheet"th:href="@{vendor/bootstrap/bootstrap.min.css}">
-	<link rel="stylesheet"th:href="@{vendor/fontawesome/css/all.min.css}">
+	<link rel="stylesheet"th:href="@{/vendor/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet"th:href="@{/vendor/fontawesome/css/all.min.css}">
 	
 	
 </head>
@@ -28,7 +28,7 @@
 				<i class="fas fa-map-pin text-primary"></i> Canguaretama - RN
 			</div>
 			<div>
-				<i class="fas fa-id-card-alt text-primary"></i> Sistema de marcação de consultas - Sismac
+				<i class="fas fa-id-card-alt text-primary"></i> Sistema de Marcação de Consultas - SISMAC
 			</div>
 			
 			<div >
@@ -45,7 +45,7 @@
 				    <a class="nav-link active" href="#">Consultas/Exames</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Pacientes</a>
+				    <a class="nav-link" th:href="@{/pacientes/form}">Pacientes</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="#">Relatórios</a>
