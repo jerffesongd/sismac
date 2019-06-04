@@ -16,19 +16,20 @@
 	
 	<link rel="stylesheet"th:href="@{vendor/bootstrap/bootstrap.min.css}">
 	<link rel="stylesheet"th:href="@{vendor/fontawesome/css/all.min.css}">
+	<link rel="stylesheet"th:href="@{vendor/css/sismac.css}">
 	
 	
 </head>
-<body>
+<body style="height: 100%; position: absolute;">
 	<div class="container-fluid">
-		
+		<!-- Topo -->
 		<div class="d-flex justify-content-around m-4">
 			
 			<div>
 				<i class="fas fa-map-pin text-primary"></i> Canguaretama - RN
 			</div>
 			<div>
-				<i class="fas fa-id-card-alt text-primary"></i> Sistema de marcação de consultas - Sismac
+				<i class="fas fa-id-card-alt text-primary"></i> Sistema de marcação de consultas - SISMAC
 			</div>
 			
 			<div >
@@ -37,7 +38,8 @@
 
 		</div>
 
-		<div class="row m-2"> <!-- Topo -->
+
+		<div class="row m-2"> 
 			
 			<div class="col-8 ">
 				<ul class="nav justify-content-center">
@@ -56,21 +58,69 @@
 				</ul>
 			</div>
 			<div class="col-4">
-				<a href="#" class="btn btn-warning">Marcar Consulta/Exame</a>
+				<a href="#" class="btn sismac-btn-warning rounded-pill ">Marcar Consulta/Exame</a>
 			</div>
 		
-		</div> <!-- /Topo -->
+		</div>
+		<!-- /Topo -->
 		
-		<div> <!-- Conteudo -->
+		<!-- Conteudo -->
+		<div> 
 			
 			<th:block layout:fragment="conteudo">
 			</th:block>
 			
-		</div> <!-- /Conteudo -->
+		</div>
+		<!-- /Conteudo -->
 		
-		<div> <!-- Rodapé -->
 		
-		</div> <!-- /Rodapé -->
+		
+	</div>
+	
+	<div >
+		
+		<!-- Rodapé -->
+		<div class="p-4 m-0 bg-dark text-white"> 
+			<div class="row justify-content-center" >
+				<div class="col-4 mr-4">
+				
+					<div class="row ">
+						<h4>SISMAC</h4>
+						<div class="col-12">
+							<p class="text-light">Temos por objetivo auxiliar na oferta de saúde pública, auxiliando na praticidade durante a 
+							marcação de procedimentos médicos e consultas da situação atual dos pedidos feitos por pacientes.
+							</p>
+						</div>
+					</div>
+					
+				</div>
+			
+				<div class="col-4 ml-4">
+					<div class="row">
+						<h4>Qual sua dúvida?</h4>
+						<div class="col-12 text-light">
+							<i class="fas fa-map-pin text-primary"></i> Canguaretama - RN<br />
+						
+							<i class="fas fa-id-card-alt text-primary"></i> Sistema de marcação de consultas - Sismac<br />
+						
+							<i class="fas fa-phone text-primary"></i> (88) 98888-8888
+						</div>
+					</div>
+					<div class="row">
+						
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row justify-content-center" >
+				Todos os direitos reservados.
+			</div>
+			
+		
+		</div>
+		<!-- /Rodapé -->
+	
 	</div>
 
 </body>
