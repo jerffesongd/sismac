@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragmentos/layout}">
+
+<head>
+	<title>Login</title>
+</head>
+
+<body>
+	
+	<th:block layout:fragment="conteudo">
+		
+		<div >
+			<form>
+				<div class="container align-items-center py-4" style="border: solid 1px">
+					<input type="text" id="nome" class="form-control col-3" placeholder="Nome">
+					<input type="number" id="idade" class="form-control col-3" placeholder="Idade">
+					<input type="text" id="cns" class="form-control col-3" placeholder="CNS">
+					<input type="text" id="nome" class="form-control col-3" placeholder="Nome da Mãe">
+				</div>
+			
+			</form>
+		</div>
+		
+	</th:block>
+	
+</body>
+
+</html>

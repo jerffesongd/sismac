@@ -1,6 +1,32 @@
 
+html, body {
+	height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#conteudo {
+	flex: 1 0 auto;
+}
+
 .sismac-btn-warning {
 	background: #ff8000;
     border: 1px solid #ff8000;
     color: #fff;
+}
+
+.menu-shadow {
+   -moz-box-shadow:    inset 0 0 10px #d8d8d8;
+   -webkit-box-shadow: inset 0 0 10px #d8d8d8;
+   box-shadow:         inset 0 0 10px #d8d8d8;
+}
+
+nav li a:hover {
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	cursor: pointer;
+	border: 1px solid #dcdcdc;
 }
