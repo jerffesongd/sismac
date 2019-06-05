@@ -22,19 +22,23 @@ public class PacientesController {
 	public ModelAndView form() {
 		
 		ModelAndView modelAndView = new ModelAndView("pacientes/form");
-		
-		Paciente p = new Paciente();
-		p.setNome("Jerffeson");
-		p.setIdade(24);
-		
-		pacienteRepository.save(p);
-		
-		List<Paciente> a  = pacienteRepository.findAll();
-		
-		for (Paciente h : a ) {
-			System.out.println(h.getNome());
-		}
+		modelAndView.addObject("paciente", new Paciente());
 		
 		return modelAndView;
 	}
+	
+	@GetMapping("/salvar")
+	public ModelAndView salvar(Paciente paciente) {		
+		
+		pacienteRepository.save(paciente);
+		
+		List<Paciente> pacientes  = pacienteRepository.findAll();
+		
+		for (Paciente p : pacientes ) {
+			System.out.println(p.getNome());
+		}
+		
+		return form();
+	}
+	
 }

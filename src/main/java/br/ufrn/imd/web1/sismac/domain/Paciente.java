@@ -15,7 +15,11 @@ public class Paciente {
 	
 	private String nome;
 	
+	private String cpf;
+	
 	private int idade;
+	
+	private String sexo;
 	
 	private String CNS;
 	
@@ -37,6 +41,20 @@ public class Paciente {
 	}
 
 	/**
+	 * @return the cpf
+	 */
+	public String getCpf() {
+		return cpf;
+	}
+
+	/**
+	 * @param cpf the cpf to set
+	 */
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	/**
 	 * @return the idade
 	 */
 	public int getIdade() {
@@ -48,6 +66,20 @@ public class Paciente {
 	 */
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+
+	/**
+	 * @return the sexo
+	 */
+	public String getSexo() {
+		return sexo;
+	}
+
+	/**
+	 * @param sexo the sexo to set
+	 */
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
 	/**

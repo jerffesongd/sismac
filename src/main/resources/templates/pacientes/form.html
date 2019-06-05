@@ -5,25 +5,46 @@
 	layout:decorate="~{fragmentos/layout}">
 
 <head>
-	<title>Login</title>
+	<title>Pacientes</title>
 </head>
 
 <body>
 	
 	<th:block layout:fragment="conteudo">
 		
-		<div >
-			<form>
-				<div class="container align-items-center py-4" style="border: solid 1px">
-					<input type="text" id="nome" class="form-control col-3" placeholder="Nome">
-					<input type="number" id="idade" class="form-control col-3" placeholder="Idade">
-					<input type="text" id="cns" class="form-control col-3" placeholder="CNS">
-					<input type="text" id="nome" class="form-control col-3" placeholder="Nome da Mãe">
+			<form class="border py-2 px-5" th:action="@{/pacientes/salvar}" th:object="${paciente}">
+				
+				<div class="d-flex justify-content-center">
+					<h3>Cadastro de Pacientes</h3>
 				</div>
-			
+				
+				<div class="d-flex justify-content-center form-group">
+					<div class="col-4">
+						<input type="text" id="nome" th:field="*{nome}" class="form-control my-2" placeholder="Nome Completo" required maxlength="100">
+						<input type="text" id="cpf" th:field="*{cpf}" class="form-control my-2" placeholder="CPF" required>
+						<input type="text" id="nome-mae" th:field="*{nomeMae}" class="form-control" placeholder="Nome da Mãe" required  maxlength="100">
+					</div>
+					<div class="col-2">
+						<input type="number" id="idade" th:field="*{idade}" class="form-control my-2" placeholder="Idade" required min="1" max="120">
+						<select id="sexo" th:field="*{sexo}" class="form-control my-2" required>
+							<option value="">Sexo</option>
+							<option value="M">Masculino</option>
+							<option value="F">Feminino</option>
+						</select>
+						<input type="text" id="cns" th:field="*{CNS}" class="form-control" placeholder="CNS" required  maxlength="100">
+					</div>
+				</div>	
+				
+				<div class="d-flex justify-content-center ">
+					<input type="submit" class="form-control col-1 btn-primary" value="Salvar">
+				</div>
+				
 			</form>
-		</div>
-		
+			<script type="text/javascript">
+			
+				$('#cpf').mask('000.000.000-00', {reverse: true});
+
+			</script>
 	</th:block>
 	
 </body>
