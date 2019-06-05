@@ -1,4 +1,4 @@
-package br.ufrn.imd.web1.sismac.sismac.controller;
+package br.ufrn.imd.web1.sismac.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
