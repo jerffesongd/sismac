@@ -25,6 +25,8 @@ public class Paciente {
 	
 	@Column(name ="nome_mae")
 	private String nomeMae;
+	
+	private List
 
 	/**
 	 * @return the nome
