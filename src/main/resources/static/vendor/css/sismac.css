@@ -10,6 +10,7 @@ body {
 
 #conteudo {
 	flex: 1 0 auto;
+	background-color: #fafafa;
 }
 
 .sismac-btn-warning {
@@ -29,4 +30,26 @@ nav li a:hover {
 	border-right: 1px solid gray;
 	cursor: pointer;
 	border: 1px solid #dcdcdc;
+}
+
+.form-control {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 18px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-sismac {
+	border-radius: 40px;
+	padding: 10px 35px;
+}
+
+.btn-submit-hover:hover {
+	border: 1px solid #2f89fc;
+    background: transparent;
+    color: #2f89fc;
 }

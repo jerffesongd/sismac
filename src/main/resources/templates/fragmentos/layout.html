@@ -40,21 +40,18 @@
 		</div>
 	
 	
-		<nav id="menu" class="row m-2 menu-shadow"> 
+		<nav id="menu" class="d-flex mt-2 menu-shadow"> 
 			
 			<div class="col-8 ">
 				<ul class="nav justify-content-center">
 				  <li class="nav-item ">
-				    <a class="nav-link active p-3 rounded" href="#">Consultas/Exames</a>
+				    <a class="nav-link active p-3 rounded" th:href="@{/}">Consultas/Exames</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link p-3 rounded" th:href="@{/pacientes/form}">Pacientes</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link p-3 rounded" href="#">Relatórios</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link p-3 rounded" href="#">Recusos</a>
 				  </li>
 				</ul>
 			</div>
@@ -71,6 +68,8 @@
 		<div class="container-fluid"> 
 			
 			<th:block layout:fragment="conteudo">
+			
+			
 			</th:block>
 			
 		</div>

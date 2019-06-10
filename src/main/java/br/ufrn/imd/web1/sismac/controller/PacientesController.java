@@ -30,14 +30,9 @@ public class PacientesController {
 	@GetMapping("/salvar")
 	public ModelAndView salvar(Paciente paciente) {		
 		
+		paciente.setCpf(paciente.getCpf().replaceAll("\\D", ""));
 		pacienteRepository.save(paciente);
-		
-		List<Paciente> pacientes  = pacienteRepository.findAll();
-		
-		for (Paciente p : pacientes ) {
-			System.out.println(p.getNome());
-		}
-		
+
 		return form();
 	}
 	
