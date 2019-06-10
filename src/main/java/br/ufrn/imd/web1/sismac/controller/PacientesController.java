@@ -18,6 +18,15 @@ public class PacientesController {
 	@Autowired
 	private PacienteRepository pacienteRepository;
 	
+	@GetMapping("/listar")
+	public ModelAndView listar() {
+		
+		ModelAndView modelAndView = new ModelAndView("pacientes/listar");
+		modelAndView.addObject("pacientes", pacienteRepository.findAll());
+		
+		return modelAndView;
+	}
+	
 	@GetMapping("/form")
 	public ModelAndView form() {
 		

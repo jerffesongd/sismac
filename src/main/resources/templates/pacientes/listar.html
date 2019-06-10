@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragmentos/layout}">
+
+<head>
+	<title>Pacientes</title>
+</head>
+
+<body>
+	
+	<th:block layout:fragment="conteudo">
+		<div class="row" style="height: 200px; background-color: #2f89fc;">
+			<div class="col-12 my-auto">
+				<div class="d-flex justify-content-center">
+					<h2 class="font-weight-bold text-white">Lista de Pacientes</h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="d-flex justify-content-center">
+		
+			
+			<div class="card mt-4 mb-4 p-4 col-8" >
+				<div class="d-flex mb-4 justify-content-end ">
+						<a th:href="@{form}" class="btn btn-primary btn-submit-hover btn-sismac">Novo Paciente</a>
+				</div>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Nome</th>
+							<th scope="col">CPF</th>
+							<th scope="col">Telefone</th>
+							<th scope="col">CNS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="paciente : ${pacientes}">
+							<th th:text="${paciente.nome}"></th>
+							<td th:text="${paciente.cpf}"></td>
+							<td th:text="${paciente.telefone}"></td>
+							<td th:text="${paciente.CNS}"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+		
+		</div>
+		
+		<script type="text/javascript">
+		
+			$('#cpf').mask('000.000.000-00', {reverse: true});
+
+		</script>
+	</th:block>
+	
+</body>
+
+</html>

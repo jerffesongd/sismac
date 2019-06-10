@@ -31,6 +31,9 @@ public class Paciente {
 	
 	private String CNS;
 	
+	@Column(nullable=true)
+	private String telefone;
+	
 	@Column(name ="nome_mae")
 	private String nomeMae;
 	
@@ -152,5 +155,35 @@ public class Paciente {
 	public void setConsultas(List<Consulta> consultas) {
 		this.consultas = consultas;
 	}
+
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the telefone
+	 */
+	public String getTelefone() {
+		return telefone;
+	}
+
+	/**
+	 * @param telefone the telefone to set
+	 */
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	
 	
 }
