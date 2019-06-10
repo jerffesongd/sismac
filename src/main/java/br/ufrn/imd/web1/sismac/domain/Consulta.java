@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,11 +21,15 @@ public class Consulta {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name ="id_consulta")
     private Integer id;
 	
-	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name = "id_paciente")
 	private Paciente paciente;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name = "id_medico")
 	private Medico medico;
 	
 	@Column(nullable = true, updatable = false, name="DATA_CONSULTA")
@@ -31,7 +38,7 @@ public class Consulta {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataConsulta;
 	
-	@Column(nullable = true, updatable = false, name="DATA_CONSULTA")
+	@Column(nullable = true, updatable = false, name="DATA_AGENDAMENTO")
 	@CreatedDate
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)

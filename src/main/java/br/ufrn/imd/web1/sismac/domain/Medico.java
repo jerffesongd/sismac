@@ -1,20 +1,33 @@
 package br.ufrn.imd.web1.sismac.domain;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class Medico {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name ="id_medico")
     private Integer id;
 	
 	private String nome;
 	
 	private String cpf;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SELECT)
+	private List<Consulta> consultas;
 
 	/**
 	 * @return the id
@@ -57,7 +70,20 @@ public class Medico {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
+	/**
+	 * @return the consultas
+	 */
+	public List<Consulta> getConsultas() {
+		return consultas;
+	}
+
+	/**
+	 * @param consultas the consultas to set
+	 */
+	public void setConsultas(List<Consulta> consultas) {
+		this.consultas = consultas;
+	}
 	
 	
 }

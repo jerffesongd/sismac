@@ -1,16 +1,24 @@
 package br.ufrn.imd.web1.sismac.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class Paciente {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name ="id_paciente")
     private Integer id;
 	
 	private String nome;
@@ -26,7 +34,12 @@ public class Paciente {
 	@Column(name ="nome_mae")
 	private String nomeMae;
 	
-	private List
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Exame> exames;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SELECT)
+	private List<Consulta> consultas;
 
 	/**
 	 * @return the nome
@@ -111,7 +124,33 @@ public class Paciente {
 	public void setNomeMae(String nomeMae) {
 		this.nomeMae = nomeMae;
 	}
-	
-	
 
+	/**
+	 * @return the exames
+	 */
+	public List<Exame> getExames() {
+		return exames;
+	}
+
+	/**
+	 * @param exames the exames to set
+	 */
+	public void setExames(List<Exame> exames) {
+		this.exames = exames;
+	}
+
+	/**
+	 * @return the consultas
+	 */
+	public List<Consulta> getConsultas() {
+		return consultas;
+	}
+
+	/**
+	 * @param consultas the consultas to set
+	 */
+	public void setConsultas(List<Consulta> consultas) {
+		this.consultas = consultas;
+	}
+	
 }
