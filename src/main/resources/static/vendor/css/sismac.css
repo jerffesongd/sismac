@@ -17,19 +17,29 @@ body {
 	background: #ff8000;
     border: 1px solid #ff8000;
     color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
 }
 
-.menu-shadow {
-   -moz-box-shadow:    inset 0 0 10px #d8d8d8;
-   -webkit-box-shadow: inset 0 0 10px #d8d8d8;
-   box-shadow:         inset 0 0 10px #d8d8d8;
+.sismac-btn-warning:hover {
+    border: 1px solid #ff8000;
+    color: #ff8000;
+    background: transparent;
+    font-weight: bold;
 }
 
 nav li a:hover {
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
+	
 	cursor: pointer;
-	border: 1px solid #dcdcdc;
+	border-bottom:solid;
+	border-bottom-color: orange;  
+	
+}
+
+nav li a {
+	border-top:solid;
+	border-bottom:solid;
+	border-color: #fff; 
 }
 
 .form-control {
