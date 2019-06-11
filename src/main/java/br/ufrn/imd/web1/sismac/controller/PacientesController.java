@@ -42,7 +42,7 @@ public class PacientesController {
 		paciente.setCpf(paciente.getCpf().replaceAll("\\D", ""));
 		pacienteRepository.save(paciente);
 
-		return form();
+		return listar();
 	}
 	
 }
