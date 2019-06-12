@@ -16,6 +16,18 @@ import org.hibernate.annotations.FetchMode;
 @Entity
 public class Medico {
 
+	
+	public Medico() {
+		super();
+	}
+
+	public Medico(Integer id, String nome, String cpf) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name ="id_medico")

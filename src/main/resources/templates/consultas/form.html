@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragmentos/layout}">
+
+<head>
+	<title>Consultas</title>
+</head>
+
+<body>
+	
+	<th:block layout:fragment="conteudo">
+		<div class="row" style="height: 200px; background-color: #2f89fc;">
+			<div class="col-12 my-auto">
+				<div class="d-flex justify-content-center">
+					<h2 class="font-weight-bold text-white">Cadastro de Consulta</h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="d-flex justify-content-center">
+			<div class="card mt-4 mb-4 p-4 col-8" >
+				<form class="py-2" th:action="@{/consultas/salvar}" th:object="${consulta}">
+	
+					<div class="d-flex justify-content-center form-group">
+						<div class="col-12 col-sm-8">
+							
+							<select class="form-control" th:field="*{paciente}" required>
+								<option value="">Paciente</option>
+								<option th:each="paciente : ${pacientes}" th:value="${paciente.id}" th:text="${paciente.nome}"></option>
+							</select>
+							
+							<select class="form-control" th:field="*{medico}" required>
+								<option value="">Médico</option>
+								<option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.nome}"></option>
+							</select>
+							
+							<input class="form-control" type="date" th:field="*{dataConsulta}" required >
+														
+						</div>
+					</div>	
+					
+					<div class="d-flex justify-content-center ">
+						<a th:href="@{/consultas/listar}" class="btn btn-primary btn-submit-hover btn-sismac">Voltar</a>
+						<input type="submit" class="btn btn-primary btn-submit-hover btn-sismac" value="Salvar">
+					</div>
+					
+				</form>
+			</div>
+		
+		</div>
+		
+		<script type="text/javascript">
+			<!-- Espaço para scripts -->
+			
+		</script>
+	</th:block>
+	
+</body>
+
+</html>
