@@ -88,7 +88,48 @@ public class Exame {
 	public void setQtdDisponivel(int qtdDisponivel) {
 		this.qtdDisponivel = qtdDisponivel;
 	}
-	
+
+	/**
+	 * @return the paciente
+	 */
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	/**
+	 * @param paciente the paciente to set
+	 */
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	/**
+	 * @return the dataExame
+	 */
+	public Date getDataExame() {
+		return dataExame;
+	}
+
+	/**
+	 * @param dataExame the dataExame to set
+	 */
+	public void setDataExame(Date dataExame) {
+		this.dataExame = dataExame;
+	}
+
+	/**
+	 * @return the dataAgendamento
+	 */
+	public Date getDataAgendamento() {
+		return dataAgendamento;
+	}
+
+	/**
+	 * @param dataAgendamento the dataAgendamento to set
+	 */
+	public void setDataAgendamento(Date dataAgendamento) {
+		this.dataAgendamento = dataAgendamento;
+	}
 	
 	
 }

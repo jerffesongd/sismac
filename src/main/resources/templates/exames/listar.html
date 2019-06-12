@@ -5,7 +5,7 @@
 	layout:decorate="~{fragmentos/layout}">
 
 <head>
-	<title>Consultas</title>
+	<title>Exames</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 		<div class="row" style="height: 200px; background-color: #2f89fc;">
 			<div class="col-12 my-auto">
 				<div class="d-flex justify-content-center">
-					<h2 class="font-weight-bold text-white">Lista de Consultas</h2>
+					<h2 class="font-weight-bold text-white">Lista de Exames</h2>
 				</div>
 			</div>
 		</div>
@@ -24,24 +24,24 @@
 			
 			<div class="card mt-4 mb-4 p-4 col-8" >
 				<div class="d-flex mb-4 justify-content-end ">
-						<a th:href="@{form}" class="btn btn-primary btn-submit-hover btn-sismac">Marcar Consulta</a>
+						<a th:href="@{form}" class="btn btn-primary btn-submit-hover btn-sismac">Marcar Exame</a>
 						<a th:href="@{/}" class="btn btn-primary btn-submit-hover btn-sismac">Voltar</a>
 				</div>
-				<table class="table table-hover" th:if="${consultas.size() > 0}">
+				<table class="table table-hover" th:if="${exames.size() > 0}">
 					<thead>
 						<tr>
+							<th scope="col">Título</th>
 							<th scope="col">Paciente</th>
-							<th scope="col">Médico</th>
-							<th scope="col">Data da Consulta</th>
+							<th scope="col">Data do Exame</th>
 							<th scope="col">Data do Agendamento</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="consulta : ${consultas}">
-							<td th:text="${consulta.paciente.nome}"></td>
-							<td th:text="${consulta.medico.nome}"></td>
-							<td th:text="${#dates.format(consulta.dataConsulta, 'dd/MM/yyyy')}"></td>
-							<td th:text="${#dates.format(consulta.dataAgendamento, 'dd/MM/yyyy')}"></td>
+						<tr th:each="exame : ${exames}">
+							<td th:text="${exame.tituloExame}"></td>
+							<td th:text="${exame.paciente.nome}"></td>
+							<td th:text="${#dates.format(exame.dataExame, 'dd/MM/yyyy')}"></td>
+							<td th:text="${#dates.format(exame.dataAgendamento, 'dd/MM/yyyy')}"></td>
 						</tr>
 					</tbody>
 				</table>

@@ -36,7 +36,7 @@ public class Consulta {
 	@CreatedDate
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataConsulta = new Date();
+	private Date dataConsulta;
 	
 	@Column(nullable = true, updatable = false, name="DATA_AGENDAMENTO")
 	@CreatedDate
