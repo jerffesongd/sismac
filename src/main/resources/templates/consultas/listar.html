@@ -23,10 +23,6 @@
 		
 			
 			<div class="card mt-4 mb-4 p-4 col-8" >
-				<div class="d-flex mb-4 justify-content-end ">
-						<a th:href="@{form}" class="btn btn-primary btn-submit-hover btn-sismac">Marcar Consulta</a>
-						<a th:href="@{/}" class="btn btn-primary btn-submit-hover btn-sismac">Voltar</a>
-				</div>
 				<table class="table table-hover" th:if="${consultas.size() > 0}">
 					<thead>
 						<tr>
@@ -45,6 +41,10 @@
 						</tr>
 					</tbody>
 				</table>
+				
+				<div th:if="${consultas.size() <= 0}">
+					Nenhuma Consulta Marcada.
+				</div>
 				
 			</div>
 		

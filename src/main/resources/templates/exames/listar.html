@@ -23,10 +23,7 @@
 		
 			
 			<div class="card mt-4 mb-4 p-4 col-8" >
-				<div class="d-flex mb-4 justify-content-end ">
-						<a th:href="@{form}" class="btn btn-primary btn-submit-hover btn-sismac">Marcar Exame</a>
-						<a th:href="@{/}" class="btn btn-primary btn-submit-hover btn-sismac">Voltar</a>
-				</div>
+				
 				<table class="table table-hover" th:if="${exames.size() > 0}">
 					<thead>
 						<tr>
@@ -45,6 +42,14 @@
 						</tr>
 					</tbody>
 				</table>
+				
+				<div th:if="${exames.size() <= 0}">
+					Nenhum Exame Marcado.
+				</div>
+				
+				<div class="d-flex justify-content-end row">
+						<a th:href="@{/}" class="btn btn-primary btn-submit-hover btn-sismac col-12 col-md-6 col-lg-4 col-xl-2 mt-1">Voltar</a>
+				</div>
 				
 			</div>
 		

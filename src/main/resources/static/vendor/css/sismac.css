@@ -53,9 +53,13 @@ nav li a {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.btn-sismac {
+.btn-sismac-menu {
 	border-radius: 40px;
 	padding: 10px 35px;
+}
+
+.btn-sismac {
+	border-radius: 40px;
 }
 
 .btn-submit-hover:hover {
