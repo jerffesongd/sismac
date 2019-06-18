@@ -2,11 +2,15 @@ package br.ufrn.imd.web1.sismac.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import br.ufrn.imd.web1.sismac.domain.Consulta;
+import br.ufrn.imd.web1.sismac.domain.Mensagem;
 import br.ufrn.imd.web1.sismac.repository.ConsultaRepository;
 import br.ufrn.imd.web1.sismac.repository.MedicoRepository;
 import br.ufrn.imd.web1.sismac.repository.PacienteRepository;
@@ -25,7 +29,7 @@ public class ConsultaController {
 	private MedicoRepository medicoRepository;
 	
 	@GetMapping("/listar")
-	public ModelAndView listar() {
+	public ModelAndView listar(Model model) {
 		
 		ModelAndView modelAndView = new ModelAndView("consultas/listar");
 		modelAndView.addObject("consultas", consultaRepository.findAll());
@@ -45,10 +49,12 @@ public class ConsultaController {
 	}
 	
 	@GetMapping("/salvar")
-	public ModelAndView salvar(Consulta consulta) {		
+	public ModelAndView salvar(Consulta consulta, RedirectAttributes  ra) {		
 		
 		consultaRepository.save(consulta);
-
-		return listar();
+		ModelAndView modelAndView = new ModelAndView(new RedirectView("listar", true));
+		ra.addFlashAttribute("success", Mensagem.sucesso());
+		return modelAndView;
+		
 	}
 }

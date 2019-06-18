@@ -14,6 +14,7 @@
 	<script th:src="@{/vendor/fontawesome/js/all.min.js}"></script>
 	<script th:src="@{/vendor/bootstrap/bootstrap.min.js}"></script>
 	<script type="text/javascript" th:src="@{/vendor/js/datatables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendor/js/sweetalert.min.js}"></script>
 	
 	<link rel="stylesheet"th:href="@{/vendor/bootstrap/bootstrap.min.css}">
 	<link rel="stylesheet"th:href="@{/vendor/fontawesome/css/all.min.css}">
@@ -26,7 +27,9 @@
 	
 </head>
 <body >
-
+	
+    <input th:if="${success != null}" type="hidden" class="msg-success" th:value="${success.conteudo}"/>
+	
 	<!-- Topo -->
 	<div class="container-fluid">
 		<div class="row p-4 d-flex justify-content-around" style="background-color: #f9f9f9;">
@@ -122,7 +125,31 @@
 	
 	</footer>
 	<!-- /Rodapé -->
-
+	
+	<script type="text/javascript">
+	
+		
+		$('.msg-error').each(function() { 
+	        swal("", $(this).val(),"error");
+	    });
+	    
+	    $('.msg-warning').each(function() { 
+	        swal("", $(this).val(),"warning");
+	    });
+	    
+	    $('.msg-info').each(function() { 
+	        swal("", $(this).val(),"info");
+	    });
+	    
+	    $('.msg-success').each(function() { 
+	        swal("", $(this).val(),"success");
+	    });
+	    $('.msg-danger').each(function() { 
+	        swal("", $(this).val(),"error");
+	    });
+	
+	
+	</script>
 	
 </body>
 </html>
