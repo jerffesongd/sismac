@@ -20,7 +20,7 @@
 		</div>
 		
 		<div class="d-flex justify-content-center">
-			<div class="card mt-4 mb-4 p-4 col-8" >
+			<div class="card mt-4 mb-4 p-4 col-12 col-sm-10 col-lg-6" >
 				<form class="py-2" th:action="@{/consultas/salvar}" th:object="${consulta}">
 	
 					<div class="row d-flex justify-content-center">
@@ -42,8 +42,9 @@
 					</div>	
 					
 					<div class="row d-flex justify-content-center ">
-						<a th:href="@{/consultas/listar}" class="btn btn-primary btn-submit-hover btn-sismac col-12 col-md-6 col-lg-4 col-xl-2 mt-1">Voltar</a>
 						<input type="submit" class="btn btn-primary btn-submit-hover btn-sismac col-12 col-md-6 col-lg-4 col-xl-2 mt-1" value="Salvar">
+						<a th:href="@{/consultas/listar}" class="btn btn-primary btn-submit-hover btn-sismac col-12 col-md-6 col-lg-4 col-xl-2 mt-1">Voltar</a>
+						
 					</div>
 					
 				</form>

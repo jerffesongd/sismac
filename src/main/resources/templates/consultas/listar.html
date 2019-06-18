@@ -20,10 +20,9 @@
 		</div>
 		
 		<div class="d-flex justify-content-center">
-		
 			
-			<div class="card mt-4 mb-4 p-4 col-8" >
-				<table class="table table-hover" th:if="${consultas.size() > 0}">
+			<div class="card mt-4 mb-4 p-4 col-12 col-sm-10 col-md-8 table-responsive" >
+				<table id="tbl-consultas" class="table table-hover" th:if="${consultas.size() > 0}">
 					<thead>
 						<tr>
 							<th scope="col">Paciente</th>
@@ -53,6 +52,16 @@
 		<script type="text/javascript">
 		
 			$('#cpf').mask('000.000.000-00', {reverse: true});
+			
+			$(document).ready( function () {
+			    $('#tbl-consultas').DataTable({
+			    	
+			    	language: {
+			            url: '/sismac/vendor/Portuguese-Brasil.json'
+			        }
+			    	
+			    });
+			});
 
 		</script>
 	</th:block>
